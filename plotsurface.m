@@ -10,7 +10,7 @@ V = zeros(xlim, ylim);
 M = [.1072;9.4248;.0039;.4195;-2.089;.3365;.046;-0.1];
 B = [1.327;-1.0683;2.1578;.0733;2.434;-.211;-.3076;-1.828];
 DOMAIN = [0,.25;.25,.3;0,.4;.95,1.1;.75,.96;-.5,0;.25,1.5;.8144,1.044]';
-gradient = createGradient(M,B,DOMAIN)
+gradient = createGradient(M,B,DOMAIN);
 
 function [result] = createGradient (M,B,DOMAIN)
     result = 0
@@ -23,9 +23,9 @@ function [result] = createGradient (M,B,DOMAIN)
 
     result = -createLine(m,b,domain) + result;
     end
-    figure()
-    fsurf(result/100)
-    axis([-.25 1.25 -.25 2.25 -10 10])
+%     figure()
+%     fsurf(result/100)
+%     axis([-.25 1.25 -.25 2.25 -10 10])
 
     figure()
     fcontour(result/100)
